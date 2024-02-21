@@ -1,0 +1,5 @@
+package com.example.demo.registration.exceptioncontroller;
+
+public class RegExceptionController {
+
+}

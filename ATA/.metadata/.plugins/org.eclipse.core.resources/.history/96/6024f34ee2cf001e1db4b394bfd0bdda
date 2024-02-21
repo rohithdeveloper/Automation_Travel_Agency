@@ -1,0 +1,39 @@
+package com.example.vehicle.modelmapper;
+
+import com.example.vehicle.dto.VehicleDto;
+import com.example.vehicle.model.Vehicle;
+
+public class VehicleMapper {
+
+	public static VehicleDto mapToVehicleDto(Vehicle vehicle) {
+		VehicleDto vehicleDto=new VehicleDto();
+//		vehicleDto.setId(vehicle.getId());
+		vehicleDto.setVehicleName(vehicle.getVehicleName());
+		vehicleDto.setDriverId(vehicle.getDriverId());
+		vehicleDto.setSeatingCapacity(vehicle.getSeatingCapacity());
+		vehicleDto.setVehicleType(vehicle.getVehicleType());
+		vehicleDto.setFarePerKm(vehicle.getFarePerKm());
+		return vehicleDto;
+		
+	}
+	
+	public static Vehicle mapToVehicle(Vehicle vehicle2) {
+		Vehicle vehicle=new Vehicle();
+//		vehicle.setId(vehicleDto.getId());
+		vehicle.setVehicleName(vehicle2.getVehicleName());
+		vehicle.setDriverId(vehicle2.getDriverId());
+		vehicle.setSeatingCapacity(vehicle2.getSeatingCapacity());
+		vehicle.setVehicleType(vehicle2.getVehicleType());
+		vehicle.setFarePerKm(vehicle2.getFarePerKm());
+		return vehicle;
+		
+	}
+//	public static List<VehicleDto> mapToVehicleDto(List<Vehicle> vehicles) {
+//		List<VehicleDto> vehicleDtoList = vehicles.stream()
+//	            .map(VehicleMapper::mapToVehicleDto) // Assuming you have a method to map a single Vehicle to VehicleDto
+//	            .collect(Collectors.toList());
+//
+//	    return vehicleDtoList;
+//       
+//	}
+}
