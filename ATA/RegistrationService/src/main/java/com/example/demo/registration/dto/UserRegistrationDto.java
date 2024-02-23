@@ -15,4 +15,6 @@ public class UserRegistrationDto {
     private String address;
     private String mobile;
     private String email;
+    private String password;
+    private String role;
 }

@@ -12,6 +12,8 @@ public class RegistrationMapper {
 		userDto.setAddress(registration.getAddress());
 		userDto.setMobile(registration.getMobile());
 		userDto.setEmail(registration.getEmail());
+		userDto.setPassword(registration.getPassword());
+		userDto.setRole(registration.getRole());
 		return userDto;
 	}
 	
@@ -23,6 +25,8 @@ public class RegistrationMapper {
 		user.setAddress(registrationDto.getAddress());
 		user.setMobile(registrationDto.getMobile());
 		user.setEmail(registrationDto.getEmail());
+		user.setPassword(registrationDto.getPassword());
+		user.setRole(registrationDto.getRole());
 		return user;
 	}
 

@@ -33,6 +33,10 @@ public class UserRegistration {
 	private String mobile;
 	@Column(name = "User_Email")
 	private String email;
+	@Column(name = "User_Password")
+	private String password;
+	@Column(name = "User_Role")
+	private String role;
 	
 
 }
