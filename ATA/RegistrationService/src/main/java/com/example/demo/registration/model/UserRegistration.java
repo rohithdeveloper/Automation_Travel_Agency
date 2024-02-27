@@ -23,16 +23,16 @@ public class UserRegistration {
 	private int userId;
 	@Column(name = "User_Name")
 	private String name;
-	@Column(name = "User_Dob")
-	private String Dob;
-	@Column(name = "User_Gender")
-	private String gender;
-	@Column(name = "User_Address")
-	private String address;
-	@Column(name = "User_Mobile")
-	private String mobile;
-	@Column(name = "User_Email")
-	private String email;
+//	@Column(name = "User_Dob")
+//	private String Dob;
+//	@Column(name = "User_Gender")
+//	private String gender;
+//	@Column(name = "User_Address")
+//	private String address;
+//	@Column(name = "User_Mobile")
+//	private String mobile;
+//	@Column(name = "User_Email")
+//	private String email;
 	@Column(name = "User_Password")
 	private String password;
 	@Column(name = "User_Role")

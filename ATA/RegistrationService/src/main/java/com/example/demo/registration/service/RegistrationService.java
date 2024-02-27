@@ -4,5 +4,6 @@ import com.example.demo.registration.dto.UserRegistrationDto;
 
 public interface RegistrationService {
 	String save(UserRegistrationDto userDto);
+//	UserRegistrationDto getUserById(int id);
 
 }

@@ -32,6 +32,7 @@ public class SecurityConfig {
         return new UserInfoUserDetailsService();
     }
 
+	
 	@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf().disable().cors().and()

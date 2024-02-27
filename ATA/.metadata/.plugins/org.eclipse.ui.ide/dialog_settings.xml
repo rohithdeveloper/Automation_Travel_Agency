@@ -42,6 +42,11 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\roparime\OneDrive - Capgemini\Desktop\subra\Employee"/>
+			<item value="C:\Users\roparime\OneDrive - Capgemini\Desktop\subra\Address"/>
+			<item value="C:\Users\roparime\OneDrive - Capgemini\Daily Updates\Casestudies(1)\ATA\Route_Service"/>
+			<item value="C:\Users\roparime\OneDrive - Capgemini\Daily Updates\Casestudies(1)\ATA\Driver_Service"/>
+			<item value="C:\Users\roparime\OneDrive - Capgemini\Daily Updates\Casestudies(1)\ATA\Booking_Service"/>
 			<item value="C:\Users\roparime\OneDrive - Capgemini\Daily Updates\Casestudies(1)\ATA\APIGateway"/>
 		</list>
 	</section>

@@ -17,6 +17,15 @@ public class GatewayCongfig {
                 .route("Vehicle-Microservice", r -> r
                         .path("/api/vehicle/**")
                         .uri("http://localhost:8082"))
+                .route("Booking-Microservices", r -> r
+                        .path("/api/booking/**")
+                        .uri("http://localhost:8083"))
+                .route("Driver-Microservices", r -> r
+                        .path("/api/driver/**")
+                        .uri("http://localhost:8084"))
+                .route("Route-Microservices", r -> r
+                        .path("/api/route/**")
+                        .uri("http://localhost:8085"))
                 .build();
     }
 
