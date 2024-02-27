@@ -61,23 +61,22 @@ public class RouteServiceImpl implements RouteService {
 		
 	}
 
+	
+
 	@Override
-	public List<RouteDto> viewRoutesBySource(String source) {
-	    List<Route> routes = routeRepo.findAll(); // Assuming routeRepo is correctly instantiated elsewhere
+	public RouteDto viewRouteById(int routeId) {
+		// TODO Auto-generated method stub
+		Optional<Route> optionalRoute = routeRepo.findById(routeId);
+		if(optionalRoute.isPresent()) {
+			Route route = optionalRoute.get();
+			 RouteDto routeDto= modelMapper.map(route, RouteDto.class);
+			return routeDto;
+		}
+		else {
+			throw new RouteNotFoundException("driver with" + routeId + "not found");
 
-	    // Filter routes by source
-	    List<Route> filteredRoutes = routes.stream()
-	                                        .filter(route -> source.equals(route.getSource()))
-	                                        .collect(Collectors.toList());
+		}
+	}
 
-	    if (filteredRoutes.isEmpty()) {
-	        throw new RouteNotFoundException("The list is empty for source: " + source);
-	    }
-	 // Correctly convert filteredRoutes to List<RouteDto> using ModelMapper
-	    List<RouteDto> routeDtos = filteredRoutes.stream()
-	                                             .map(route -> modelMapper.map(route, RouteDto.class)) // Corrected this line
-	                                             .collect(Collectors.toList());
-
-	    return routeDtos;
-}
+	
 }

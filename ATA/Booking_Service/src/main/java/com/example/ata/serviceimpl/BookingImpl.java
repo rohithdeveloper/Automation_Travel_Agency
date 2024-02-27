@@ -6,7 +6,13 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.ata.client.DriverClient;
+import com.example.ata.client.RouteClient;
+import com.example.ata.client.VehicleClient;
 import com.example.ata.dto.BookingDto;
+import com.example.ata.dto.DriverDto;
+import com.example.ata.dto.RouteDto;
+import com.example.ata.dto.VehicleDto;
 import com.example.ata.exception.BookingNotFoundException;
 import com.example.ata.model.Booking;
 import com.example.ata.repo.BookingRepo;
@@ -20,6 +26,15 @@ public class BookingImpl implements BookingService {
 
 	@Autowired
 	private BookingRepo bookingRepo;
+	
+	@Autowired
+	private RouteClient routeClient;
+
+	@Autowired
+	private DriverClient driverClient;
+	
+	@Autowired
+	private VehicleClient vehicleClient;
 
 	@Override
 	public BookingDto saveBooking(BookingDto bookingDto) {
@@ -69,6 +84,12 @@ public class BookingImpl implements BookingService {
 		if (optionalvehicle.isPresent()) {
 			Booking booking = optionalvehicle.get();
 			BookingDto bookingDto = modelMapper.map(booking, BookingDto.class);
+			RouteDto routeDto=routeClient.viewRoutesById(bookingId);
+			DriverDto driverDto=driverClient.viewDriver(bookingId);
+			VehicleDto vehicleDto=vehicleClient.getVehicleById(bookingId);
+			bookingDto.setDriverDto(driverDto);
+			bookingDto.setRouteDto(routeDto);
+			bookingDto.setVehicleDto(vehicleDto);
 			return bookingDto;
 		} else {
 			throw new BookingNotFoundException("Booking with id: " + bookingId + " not found");

@@ -17,35 +17,29 @@ import com.example.ata.service.BookingService;
 @RequestMapping("/api/booking")
 public class BookingController {
 
-	@Autowired
-	private BookingService bookingService;
+    @Autowired
+    private BookingService bookingService;
 
-	@Autowired
-	private ModelMapper modelMapper;
+    @Autowired
+    private ModelMapper modelMapper;
 
-	@PostMapping("/bookings")
-	public BookingDto saveBooking(@RequestBody BookingDto bookingDto) {
-		return bookingService.saveBooking(bookingDto);
- 
-	}
- 
-	
- 
-	@DeleteMapping("/deletebooking/{bookingId}")
-	public String cancelBooking(@PathVariable int bookingId) {
-		return bookingService.cancelBooking(bookingId);
- 
-	}
- 
-	 @GetMapping("/bookings/{bookingId}")
-	    public String viewBookingStatus(@PathVariable("bookingId") int bookingId) {
-	        return bookingService.viewBookingStatus(bookingId);
-	    }
-	
- 
-	 @GetMapping("/bookings/{bookingId}")
-	    public BookingDto viewBooking(@PathVariable("bookingId") int bookingId) {
-	        return bookingService.viewBooking(bookingId);
-	    }
+    @PostMapping("/bookings")
+    public BookingDto saveBooking(@RequestBody BookingDto bookingDto) {
+        return bookingService.saveBooking(bookingDto);
+    }
+
+    @DeleteMapping("/deletebooking/{bookingId}")
+    public String cancelBooking(@PathVariable int bookingId) {
+        return bookingService.cancelBooking(bookingId);
+    }
+
+    @GetMapping("/booking-status/{bookingId}")
+    public String viewBookingStatus(@PathVariable("bookingId") int bookingId) {
+        return bookingService.viewBookingStatus(bookingId);
+    }
+
+    @GetMapping("/bookings/{bookingId}")
+    public BookingDto viewBooking(@PathVariable("bookingId") int bookingId) {
+        return bookingService.viewBooking(bookingId);
+    }
 }
-	

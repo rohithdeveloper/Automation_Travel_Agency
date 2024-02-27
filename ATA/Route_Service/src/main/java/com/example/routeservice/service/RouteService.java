@@ -12,6 +12,7 @@ public interface RouteService {
 
 	String deleteRoute(int routeId);
 
-	List<RouteDto> viewRoutesBySource(String source);
+//	List<RouteDto> viewRoutesById(int routeId);
+	RouteDto viewRouteById(int routeId);
 
 }
